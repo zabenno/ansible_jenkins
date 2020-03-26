@@ -28,13 +28,3 @@
   notify:
           - build_automated_jenkins_image
 
-- name: run jenkins container
-  docker_container:
-          name: jenkins
-          image: "{{ jenkins_custom_image_name }}"
-          state: started
-          volumes:
-                  - "{{ jenkins_home_volume }}:/var/jenkins_home"
-          ports:
-                  - "8080:8080"
-                  - "50000:50000"
