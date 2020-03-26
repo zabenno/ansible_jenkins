@@ -5,6 +5,7 @@
           build:
                   path: "{{ jenkins_build_dir }}"
                   pull: no
+          force: yes
           source: build
   notify:
           - run_jenkins_container
