@@ -9,14 +9,13 @@
           - run_jenkins_container
 
 - name: run_jenkins_container
-    docker_container:
-            name: jenkins
-            image: "{{ jenkins_custom_image_name }}"
-            state: started
-            restart: yes
-            volumes:
-                    - "{{ jenkins_home_volume }}:/var/jenkins_home"
-            ports:
-                    - "8080:8080"
-                    - "50000:50000"
-
+  docker_container:
+          name: jenkins
+          image: "{{ jenkins_custom_image_name }}"
+          state: started
+          restart: yes
+          volumes:
+                  - "{{ jenkins_home_volume }}:/var/jenkins_home"
+          ports:
+                  - "8080:8080"
+                  - "50000:50000"
