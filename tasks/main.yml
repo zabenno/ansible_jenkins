@@ -9,29 +9,29 @@
 
 - name: Ensure docker build dir
   file:
-          dest: {{ jenkins_build_dir }}
+          dest: "{{ jenkins_build_dir }}"
           state: directory
           mode: '0666'
  
 - name: Copy dockerfile
   template:
           src: Dockerfile.j2
-          dest: {{ jenkins_build_dir }}/Dockerfile
+          dest: "{{ jenkins_build_dir }}/Dockerfile"
           mode: '0644'
   notify:
           - build_automated_jenkins_image
 
 - name: copy jenkins cac
   copy:
-          src: {{ jenkins_config_file }}
-          dest: {{ jenkins_build_dir }}/jenkins.yaml
+          src: "{{ jenkins_config_file }}"
+          dest: "{{ jenkins_build_dir }}/jenkins.yaml"
   notify:
           - build_automated_jenkins_image
 
 - name: run jenkins container
   docker_container:
           name: jenkins
-          image: {{ jenkins_custom_image_name }}
+          image: "{{ jenkins_custom_image_name }}"
           state: started
           volumes:
                   - "{{ jenkins_home_volume }}:/var/jenkins_home"
