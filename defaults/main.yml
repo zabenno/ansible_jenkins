@@ -1,0 +1,7 @@
+---
+jenkins_build_dir: /var/cache/docker/jenkins
+jenkins_config_file: jenkins.yaml
+jenkins_custom_image_name: automated_jenkins
+jenkins_plugins: "configuration-as-code"
+jenkins_home_volume: jenkins_home
+jenkins_plugins_repo: "https://updates.jenkins.io"

@@ -1,0 +1,7 @@
+---
+- name: build_automated_jenkins_image
+  docker_image:
+          name: {{ jenkins_custom_image_name }}
+          build:
+                  path: "{{ docker_build_dir }}"
+          source: build
