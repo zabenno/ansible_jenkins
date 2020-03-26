@@ -1,0 +1,11 @@
+---
+credentials:
+        system:
+                domainCredentials:
+                        - credentials:
+                                - usernamePassword:
+                                        scope: GLOBAL
+                                        id: "jenkins_admin"
+                                        username: "{{ jenkins_admin_username }}"
+                                        password: "{{ jenkins_admin_password }}"
+                                        description: "The default admin account for Jenkins."
