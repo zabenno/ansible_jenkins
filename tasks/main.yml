@@ -22,9 +22,10 @@
           - build_automated_jenkins_image
 
 - name: copy jenkins cac
-  copy:
+  template:
           src: "{{ jenkins_config_file }}"
           dest: "{{ jenkins_build_dir }}/jenkins.yaml"
+          mode: '0644'
   notify:
           - build_automated_jenkins_image
 
