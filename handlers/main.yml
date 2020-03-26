@@ -3,7 +3,7 @@
   docker_image:
           name: "{{ jenkins_custom_image_name }}"
           build:
-                  path: "{{ docker_build_dir }}"
+                  path: "{{ jenkins_build_dir }}"
           source: build
   notify:
           - run_jenkins_container
