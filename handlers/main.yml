@@ -4,6 +4,7 @@
           name: "{{ jenkins_custom_image_name }}"
           build:
                   path: "{{ jenkins_build_dir }}"
+                  pull: no
           source: build
   notify:
           - run_jenkins_container
